@@ -201,10 +201,10 @@ class TestHBNBCommand_destroy(unittest.TestCase):
             with self.subTest(class_name=class_name):
                 self.command = "create {}".format(class_name)
                 self.assertFalse(self.hbnb_cmd.onecmd(self.command))
-                obj = storage.all()["{}.{}".format(class_name, test_id)]
+                obj = storage.all()["{}.{}".format(class_name, "test_id")]
 
-                self.command = "{}.destroy({})".format(class_name, test_id)
-                obj = storage.all()["{}.{}".format(class_name, test_id)]
+                self.command = "{}.destroy({})".format(class_name, "test_id")
+                obj = storage.all()["{}.{}".format(class_name, "test_id")]
                 self.assertNotIn(obj, storage.all())
 
 
