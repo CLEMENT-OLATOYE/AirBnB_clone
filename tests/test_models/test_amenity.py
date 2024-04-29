@@ -25,9 +25,9 @@ class TestAmenity(unittest.TestCase):
         self.assertTrue("name" in Amenity.__dict__)
 
     def test_save_method_updates_created_at(self):
-        initial_created_at = self.amenity.created_at
-        BaseModel.save(self.amenity)
-        self.assertNotEqual(initial_created_at, self.amenity.created_at)
+        initial_updated_at = self.amenity.updated_at
+        self.amenity.save()
+        self.assertNotEqual(initial_updated_at, self.amenity.updated_at)
 
     def test_attribute_data_type(self):
         self.assertIsInstance(self.amenity.name, str)
